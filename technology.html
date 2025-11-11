@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - Exabyte Studio</title>
+  <meta name="description" content="Explore the advanced technology powering Exabyte Studio: six-layer architecture, AI algorithms, and cutting-edge 3D reconstruction.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .technology-hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    }
+
+    .technology-hero h1 {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .technology-hero p {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tech-section {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .tech-section:nth-child(even) {
+      background: var(--color-bg-secondary);
+    }
+
+    .architecture-visual {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+    }
+
+    .arch-layer {
+      padding: var(--spacing-md);
+      background: linear-gradient(135deg, rgba(255, 179, 0, 0.05), rgba(126, 87, 194, 0.05));
+      border-radius: 8px;
+      border-left: 4px solid var(--color-gold-primary);
+      transition: all var(--transition-normal);
+    }
+
+    .arch-layer:hover {
+      border-left-color: var(--color-purple-primary);
+      transform: translateX(8px);
+    }
+
+    .arch-layer-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .arch-layer-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .arch-layer-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .arch-layer-description {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-left: 52px;
+    }
+
+    .arch-arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--color-gold-primary);
+      margin: var(--spacing-sm) 0;
+    }
+
+    .bottom-packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+
+    .bottom-package {
+      padding: var(--spacing-md);
+      background: var(--color-bg-primary);
+      border-radius: 8px;
+      border: 1px solid rgba(126, 87, 194, 0.3);
+      text-align: center;
+    }
+
+    .bottom-package h4 {
+      color: var(--color-purple-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .algorithm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+    }
+
+    .algorithm-card {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+      transition: all var(--transition-normal);
+    }
+
+    .algorithm-card:hover {
+      border-color: var(--color-gold-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(255, 179, 0, 0.1);
+    }
+
+    .algorithm-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .algorithm-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .algorithm-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .algorithm-meta {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .algorithm-badge {
+      padding: 4px 12px;
+      background: rgba(255, 179, 0, 0.1);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--color-gold-light);
+    }
+
+    .algorithm-description {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .algorithm-features {
+      list-style: none;
+      padding: 0;
+    }
+
+    .algorithm-features li {
+      padding: var(--spacing-xs) 0;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    .algorithm-features li:before {
+      content: "✓";
+      color: var(--color-gold-primary);
+      font-weight: bold;
+    }
+
+    .tech-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .tech-spec-card {
+      padding: var(--spacing-lg);
+      background: linear-gradient(135deg, rgba(255, 179, 0, 0.05), rgba(126, 87, 194, 0.05));
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+    }
+
+    .spec-label {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .spec-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--gradient-gold-purple);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .spec-description {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: var(--spacing-xs);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .tech-category {
+      flex: 1;
+      min-width: 250px;
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border: 1px solid rgba(126, 87, 194, 0.1);
+    }
+
+    .tech-category h4 {
+      color: var(--color-gold-primary);
+      margin-bottom: var(--spacing-md);
+      font-size: 1.2rem;
+    }
+
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+    }
+
+    .tech-item {
+      padding: 6px 14px;
+      background: rgba(126, 87, 194, 0.1);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      border: 1px solid rgba(126, 87, 194, 0.2);
+    }
+
+    .core-concept {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border-left: 4px solid var(--color-purple-primary);
+      margin: var(--spacing-md) 0;
+    }
+
+    .core-concept h4 {
+      color: var(--color-purple-primary);
+      margin-bottom: var(--spacing-sm);
+      font-size: 1.3rem;
+    }
+
+    .core-concept p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .code-block {
+      background: #0d0d0d;
+      padding: var(--spacing-md);
+      border-radius: 8px;
+      margin: var(--spacing-md) 0;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+    }
+
+    .code-block code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--color-gold-light);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .technology-hero h1 {
+        font-size: 2rem;
+      }
+
+      .technology-hero p {
+        font-size: 1rem;
+      }
+
+      .algorithm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-packages {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="technology.html" class="nav-link active">Technology</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="api.html" class="nav-link">API</a>
+        <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="technology-hero">
+    <div class="container">
+      <h1>Advanced <span class="gradient-text">Technology</span></h1>
+      <p>
+        Exabyte Studio is built on cutting-edge architecture, AI algorithms, and engineering principles
+        that deliver professional-grade performance for 3D spatial intelligence and multimodal processing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Six-Layer Architecture -->
+  <section class="tech-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Six-Layer Clean Architecture</h2>
+        <p class="section-subtitle">
+          Exabyte Studio implements a sophisticated six-layer architecture ensuring reliability,
+          scalability, and maintainability. Each layer communicates only with adjacent layers
+          through well-defined interfaces.
+        </p>
+      </div>
+
+      <div class="architecture-visual">
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <div class="arch-layer-number">6</div>
+            <div class="arch-layer-title">GUI Layer (Qt6/PySide6)</div>
+          </div>
+          <div class="arch-layer-description">
+            Desktop application with professional editing interface. Zero-copy tensor visualization via shared memory.
+            Read-only workspace access for real-time preview without data duplication.
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <div class="arch-layer-number">5</div>
+            <div class="arch-layer-title">Application Layer (API Gateway)</div>
+          </div>
+          <div class="arch-layer-description">
+            REST and WebSocket APIs with authentication, RBAC, and session management.
+            Public interface for external integration and automation.
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <div class="arch-layer-number">4</div>
+            <div class="arch-layer-title">Orchestration Layer (Workflows)</div>
+          </div>
+          <div class="arch-layer-description">
+            High-level business logic and multi-step workflow coordination.
+            Resource allocation, session management, and complex task decomposition.
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <div class="arch-layer-number">3</div>
+            <div class="arch-layer-title">Operations Layer (Bridge)</div>
+          </div>
+          <div class="arch-layer-description">
+            Bridge layer with five sub-packages routing to independent bottom packages.
+            Enum-based operations for type-safe execution across all domains.
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer">
+          <div class="arch-layer-header">
+            <div class="arch-layer-number">1-2</div>
+            <div class="arch-layer-title">Bottom Layers (Five Independent Packages)</div>
+          </div>
+          <div class="arch-layer-description">
+            Five parallel packages that cannot communicate with each other directly.
+            Each package has a single responsibility and clean interface.
+          </div>
+          <div class="bottom-packages">
+            <div class="bottom-package">
+              <h4>Hardware</h4>
+              <p>Physical equipment control</p>
+            </div>
+            <div class="bottom-package">
+              <h4>Systems</h4>
+              <p>OS resource management</p>
+            </div>
+            <div class="bottom-package">
+              <h4>Algorithms</h4>
+              <p>Data processing algorithms</p>
+            </div>
+            <div class="bottom-package">
+              <h4>Project</h4>
+              <p>PyTorch tensor workspace</p>
+            </div>
+            <div class="bottom-package">
+              <h4>Plugins</h4>
+              <p>AI agent system</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="core-concept">
+        <h4>Key Architectural Principle</h4>
+        <p>
+          Each layer only communicates with adjacent layers through well-defined interfaces.
+          The Operations layer acts as a bridge, routing requests to the appropriate bottom package
+          via five specialized sub-packages (services, management, transform, assistance, extensions).
+          This ensures clean separation of concerns and prevents tight coupling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Technologies -->
+  <section class="tech-section section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Core Technologies</h2>
+        <p class="section-subtitle">
+          Advanced engineering patterns that power Exabyte Studio's performance and reliability.
+        </p>
+      </div>
+
+      <div class="core-concept">
+        <h4>Zero-Copy Shared Memory IPC</h4>
+        <p>
+          Exabyte Studio uses PyTorch's shared memory capabilities for zero-copy inter-process communication.
+          When the backend processes a tensor, it stores it in a named shared memory segment. The GUI can then
+          access the same tensor directly without serialization or copying, enabling real-time visualization
+          of multi-gigabyte datasets with minimal latency.
+        </p>
+      </div>
+
+      <div class="core-concept">
+        <h4>BufferReference Pattern</h4>
+        <p>
+          Instead of passing large tensors between layers, Exabyte Studio uses lightweight BufferReference
+          objects containing only metadata (buffer_id, shape, dtype, shared memory name). This allows efficient
+          communication across all architectural layers while maintaining the separation of concerns principle.
+        </p>
+      </div>
+
+      <div class="core-concept">
+        <h4>PyTorch-Native Workspace</h4>
+        <p>
+          All data processing in Exabyte Studio operates on PyTorch tensors, providing seamless integration
+          with machine learning algorithms and GPU acceleration. The TensorWorkspace manages buffer lifecycle,
+          memory allocation, and provides both read-write (backend) and read-only (GUI) access patterns.
+        </p>
+      </div>
+
+      <div class="core-concept">
+        <h4>Async-First Design</h4>
+        <p>
+          Every layer interface in Exabyte Studio is asynchronous by default, using Python's asyncio framework.
+          This enables non-blocking operations throughout the entire stack, from hardware capture to GUI updates,
+          ensuring responsive user experience even during intensive processing tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Algorithms -->
+  <section class="tech-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">AI & ML Algorithms</h2>
+        <p class="section-subtitle">
+          State-of-the-art algorithms for generation, reconstruction, and processing with 100% test coverage.
+        </p>
+      </div>
+
+      <div class="algorithm-grid">
+        <!-- ExabyteImage -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">🎨</div>
+            <div class="algorithm-name">ExabyteImage 3.0</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Exabyte</span>
+            <span class="algorithm-badge">Text-to-Image</span>
+            <span class="algorithm-badge">48K Tests</span>
+          </div>
+          <div class="algorithm-description">
+            Advanced text-to-image generation model supporting high-resolution outputs up to 2048x2048.
+            Produces photorealistic images from natural language descriptions with fine-grained control
+            over style, composition, and artistic direction.
+          </div>
+          <ul class="algorithm-features">
+            <li>Multi-resolution support (512px to 2048px)</li>
+            <li>Advanced prompt understanding</li>
+            <li>Style transfer capabilities</li>
+            <li>Seed-based reproducibility</li>
+          </ul>
+        </div>
+
+        <!-- ExabyteVideo -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">🎬</div>
+            <div class="algorithm-name">ExabyteVideo 1.0</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Exabyte</span>
+            <span class="algorithm-badge">Text-to-Video</span>
+            <span class="algorithm-badge">48K Tests</span>
+          </div>
+          <div class="algorithm-description">
+            Cutting-edge text-to-video generation with temporal consistency and motion control.
+            Generates smooth, coherent video sequences from text prompts with configurable duration,
+            resolution, and frame rates.
+          </div>
+          <ul class="algorithm-features">
+            <li>Temporal consistency across frames</li>
+            <li>Motion direction control</li>
+            <li>Variable duration (2-10 seconds)</li>
+            <li>Multiple resolution presets</li>
+          </ul>
+        </div>
+
+        <!-- ExabyteWorld -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">🌐</div>
+            <div class="algorithm-name">ExabyteWorld 1.0</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Exabyte</span>
+            <span class="algorithm-badge">Panorama-to-3D</span>
+            <span class="algorithm-badge">48K Tests</span>
+          </div>
+          <div class="algorithm-description">
+            Revolutionary panorama-to-3D scene generation. Converts 360° panoramic images into fully
+            navigable 3D environments with depth estimation, geometry reconstruction, and texture mapping.
+          </div>
+          <ul class="algorithm-features">
+            <li>Depth estimation from panoramas</li>
+            <li>Geometry reconstruction</li>
+            <li>Texture synthesis and inpainting</li>
+            <li>VR-ready output formats</li>
+          </ul>
+        </div>
+
+        <!-- VGGT -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">🔷</div>
+            <div class="algorithm-name">VGGT</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Transformer</span>
+            <span class="algorithm-badge">3D Reconstruction</span>
+            <span class="algorithm-badge">28/28 Tests</span>
+          </div>
+          <div class="algorithm-description">
+            Visual Geometry Grounded Transformer - transformer-based 3D reconstruction from multi-view images.
+            Device-agnostic implementation supporting both CPU and CUDA execution with dense point cloud generation.
+          </div>
+          <ul class="algorithm-features">
+            <li>Multi-view geometry understanding</li>
+            <li>Attention-based feature matching</li>
+            <li>Dense point cloud output</li>
+            <li>CPU/CUDA support</li>
+          </ul>
+        </div>
+
+        <!-- Gaussian Splatting -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">✨</div>
+            <div class="algorithm-name">Gaussian Splatting</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Real-time</span>
+            <span class="algorithm-badge">3D Rendering</span>
+            <span class="algorithm-badge">CUDA</span>
+          </div>
+          <div class="algorithm-description">
+            Real-time 3D scene reconstruction and rendering using 3D Gaussian primitives.
+            CUDA-accelerated rendering with spherical harmonics for view-dependent appearance.
+            Supports millions of splats at interactive frame rates.
+          </div>
+          <ul class="algorithm-features">
+            <li>Real-time rendering (60+ FPS)</li>
+            <li>Spherical harmonic appearance</li>
+            <li>Adaptive density control</li>
+            <li>View synthesis quality</li>
+          </ul>
+        </div>
+
+        <!-- COLMAP -->
+        <div class="algorithm-card">
+          <div class="algorithm-header">
+            <div class="algorithm-icon">📐</div>
+            <div class="algorithm-name">COLMAP</div>
+          </div>
+          <div class="algorithm-meta">
+            <span class="algorithm-badge">Classical</span>
+            <span class="algorithm-badge">Structure-from-Motion</span>
+            <span class="algorithm-badge">Photogrammetry</span>
+          </div>
+          <div class="algorithm-description">
+            Classical structure-from-motion and multi-view stereo pipeline. Robust camera pose estimation,
+            sparse and dense reconstruction with automatic feature detection and matching.
+          </div>
+          <ul class="algorithm-features">
+            <li>Automatic feature matching</li>
+            <li>Bundle adjustment</li>
+            <li>Dense multi-view stereo</li>
+            <li>Camera calibration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="tech-section section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Technical Specifications</h2>
+        <p class="section-subtitle">
+          Performance benchmarks and capabilities of Exabyte Studio.
+        </p>
+      </div>
+
+      <div class="tech-specs-grid">
+        <div class="tech-spec-card">
+          <div class="spec-label">Codebase Size</div>
+          <div class="spec-value">272K+</div>
+          <div class="spec-description">Lines of professionally engineered code</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">Data Modalities</div>
+          <div class="spec-value">6</div>
+          <div class="spec-description">Image, Video, Audio, 3D, Spatial, AI</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">Test Coverage</div>
+          <div class="spec-value">100%</div>
+          <div class="spec-description">AI algorithms fully tested</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">Video Resolution</div>
+          <div class="spec-value">8K</div>
+          <div class="spec-description">Maximum supported resolution</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">Audio Channels</div>
+          <div class="spec-value">20</div>
+          <div class="spec-description">Multi-channel spatial audio</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">Ambisonics Order</div>
+          <div class="spec-value">3rd</div>
+          <div class="spec-description">Professional spatial audio</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">GPU Acceleration</div>
+          <div class="spec-value">CUDA</div>
+          <div class="spec-description">NVIDIA GPU support</div>
+        </div>
+
+        <div class="tech-spec-card">
+          <div class="spec-label">API Types</div>
+          <div class="spec-value">2</div>
+          <div class="spec-description">REST and WebSocket</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="tech-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Technology Stack</h2>
+        <p class="section-subtitle">
+          Modern frameworks and libraries powering Exabyte Studio.
+        </p>
+      </div>
+
+      <div class="tech-stack">
+        <div class="tech-category">
+          <h4>Core Languages</h4>
+          <div class="tech-items">
+            <span class="tech-item">Python 3.11+</span>
+            <span class="tech-item">C++17</span>
+            <span class="tech-item">CUDA</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>ML & AI</h4>
+          <div class="tech-items">
+            <span class="tech-item">PyTorch 2.0+</span>
+            <span class="tech-item">TorchVision</span>
+            <span class="tech-item">TorchAudio</span>
+            <span class="tech-item">Transformers</span>
+            <span class="tech-item">Diffusers</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Computer Vision</h4>
+          <div class="tech-items">
+            <span class="tech-item">OpenCV</span>
+            <span class="tech-item">Pillow</span>
+            <span class="tech-item">NumPy</span>
+            <span class="tech-item">SciPy</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Audio Processing</h4>
+          <div class="tech-items">
+            <span class="tech-item">librosa</span>
+            <span class="tech-item">soundfile</span>
+            <span class="tech-item">pydub</span>
+            <span class="tech-item">scipy.signal</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>GUI Framework</h4>
+          <div class="tech-items">
+            <span class="tech-item">Qt6</span>
+            <span class="tech-item">PySide6</span>
+            <span class="tech-item">QtWidgets</span>
+            <span class="tech-item">QtCore</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>API & Web</h4>
+          <div class="tech-items">
+            <span class="tech-item">FastAPI</span>
+            <span class="tech-item">WebSockets</span>
+            <span class="tech-item">uvicorn</span>
+            <span class="tech-item">Pydantic</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>3D & Rendering</h4>
+          <div class="tech-items">
+            <span class="tech-item">PyOpenGL</span>
+            <span class="tech-item">trimesh</span>
+            <span class="tech-item">Open3D</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4>Video Processing</h4>
+          <div class="tech-items">
+            <span class="tech-item">FFmpeg</span>
+            <span class="tech-item">av (PyAV)</span>
+            <span class="tech-item">moviepy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Built on Cutting-Edge Technology</h2>
+        <p>Experience professional-grade 3D spatial intelligence powered by advanced architecture and AI.</p>
+        <div class="cta-buttons">
+          <a href="api.html" class="btn btn-primary btn-lg">Explore API</a>
+          <a href="features.html" class="btn btn-secondary btn-lg">View Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+          <p class="footer-tagline">Professional 3D Spatial Intelligence</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="features.html">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="api.html">API</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="api.html">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exabyte Spatial AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

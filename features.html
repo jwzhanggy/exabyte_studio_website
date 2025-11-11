@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Exabyte Studio | Multimodal Processing Platform</title>
+  <meta name="description" content="Comprehensive multimodal processing capabilities: Image, Video, Audio, 3D Reconstruction, Spatial Media, and AI-powered workflows.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for features page */
+    .features-hero {
+      background: linear-gradient(135deg, rgba(77, 0, 153, 0.3), rgba(255, 179, 0, 0.3)),
+                  var(--color-bg-primary);
+      padding: calc(var(--spacing-xl) + 70px) 0 var(--spacing-xl);
+      text-align: center;
+    }
+
+    .modality-section {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .modality-section:nth-child(even) {
+      background: var(--color-bg-secondary);
+    }
+
+    .modality-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .modality-icon-large {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-gold-purple);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .modality-icon-large svg {
+      width: 40px;
+      height: 40px;
+      color: var(--color-text-primary);
+    }
+
+    .modality-info h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .modality-subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+    }
+
+    .feature-item {
+      background: var(--color-bg-tertiary);
+      padding: var(--spacing-md);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all var(--transition-normal);
+    }
+
+    .feature-item:hover {
+      border-color: var(--color-gold-primary);
+      transform: translateY(-2px);
+    }
+
+    .feature-item h4 {
+      color: var(--color-gold-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .feature-item p {
+      font-size: 0.9375rem;
+      margin: 0;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+      padding: var(--spacing-md);
+      background: rgba(255, 179, 0, 0.05);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 179, 0, 0.1);
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link active">Features</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="api.html" class="nav-link">API</a>
+        <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="features-hero">
+    <div class="container">
+      <h1>Multimodal Processing<br><span class="gradient-text">Capabilities</span></h1>
+      <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto;">
+        Professional tools for six data modalities in a single unified platform.<br>
+        From editing to generation, reconstruction to rendering.
+      </p>
+    </div>
+  </section>
+
+  <!-- Image Processing -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>Image Processing (Raster)</h2>
+          <p class="modality-subtitle">Professional editing, filters, AI generation, and non-destructive workflows</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>Basic Editing</h4>
+          <p>Crop, rotate, flip, resize with multiple interpolation methods. Canvas expansion and layer management.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Enhancements</h4>
+          <p>Brightness, contrast, saturation, exposure, gamma, levels, curves. Color temperature and tint control.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Filters & Effects</h4>
+          <p>Gaussian blur, sharpen, noise reduction, edge detection. Preview/Apply workflow for non-destructive editing.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Color Transformations</h4>
+          <p>RGB, HSV, LAB, YCbCr color spaces. Histogram operations and color grading tools.</p>
+        </div>
+        <div class="feature-item">
+          <h4>AI Generation</h4>
+          <p>ExabyteImage 3.0 text-to-image synthesis. Inpainting and outpainting for image completion.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Analysis Tools</h4>
+          <p>Histogram analysis, color statistics, quality metrics (PSNR, SSIM), and metadata extraction.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Input Formats</span>
+          <span class="spec-value">JPEG, PNG, TIFF, WebP, RAW</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Output Formats</span>
+          <span class="spec-value">JPEG, PNG, TIFF, WebP</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Color Spaces</span>
+          <span class="spec-value">RGB, RGBA, HSV, LAB</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Working Format</span>
+          <span class="spec-value">PyTorch Tensors [H,W,C]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Production -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="23 7 16 12 23 17 23 7"/>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>Video Production</h2>
+          <p class="modality-subtitle">Professional timeline editing with multi-track support and GPU-accelerated encoding</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>Timeline Editor</h4>
+          <p>Unlimited video/audio/effects tracks. Real-time playback with proxy workflow for smooth editing.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Editing Tools</h4>
+          <p>Trim, split, ripple delete, speed adjustment (0.1x-10x), reverse playback, frame extraction.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Effects & Transitions</h4>
+          <p>Color grading, LUTs, stabilization, motion blur, vignette, grain. Crossfade and dissolve transitions.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Professional Codecs</h4>
+          <p>H.264, H.265/HEVC, VP9, ProRes 422/4444. GPU-accelerated encoding with NVENC/QuickSync.</p>
+        </div>
+        <div class="feature-item">
+          <h4>AI Video Generation</h4>
+          <p>ExabyteVideo 1.0 text-to-video synthesis with temporal consistency and motion control.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Audio Waveforms</h4>
+          <p>Real-time waveform rendering on timeline. Multi-channel audio mixing with spatial support.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Resolutions</span>
+          <span class="spec-value">720p to 8K</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Frame Rates</span>
+          <span class="spec-value">24, 30, 60, 120, 240 fps</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Formats</span>
+          <span class="spec-value">MP4, MOV, AVI, MKV, WebM</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Export Speed</span>
+          <span class="spec-value">2x real-time (GPU)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio Processing -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>Audio Processing & Spatial Audio</h2>
+          <p class="modality-subtitle">Professional audio editing with 3rd-order Ambisonics and HRTF processing</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>Professional Editing</h4>
+          <p>Trim, split, normalize, fade in/out. Silence detection and audio stretching (time/pitch independent).</p>
+        </div>
+        <div class="feature-item">
+          <h4>Effects Suite</h4>
+          <p>Reverb, delay, compression, limiting, gating. Parametric and graphic EQ with shelf filters.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Noise Reduction</h4>
+          <p>De-noise, de-hum (50Hz/60Hz), de-click. Spectral subtraction and adaptive filtering.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Spatial Audio</h4>
+          <p>3rd-order Ambisonics encoding/decoding. HRTF binaural processing for headphone listening.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Multi-Channel Mixing</h4>
+          <p>Up to 20 simultaneous channels. Flexible routing matrix with per-channel controls.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Analysis Tools</h4>
+          <p>Spectral analysis, waveform visualization, LUFS loudness metering, phase correlation.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Sample Rates</span>
+          <span class="spec-value">16kHz to 192kHz</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Bit Depths</span>
+          <span class="spec-value">16, 24, 32-bit float</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Channels</span>
+          <span class="spec-value">Up to 20 channels</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ambisonics</span>
+          <span class="spec-value">3rd-order (16 channels)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Reconstruction -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>3D Reconstruction & Processing</h2>
+          <p class="modality-subtitle">State-of-the-art algorithms for dense reconstruction and real-time rendering</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>VGGT Reconstruction</h4>
+          <p>Transformer-based structure-from-motion. Dense 3D reconstruction from multi-view images with camera pose estimation.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Gaussian Splatting</h4>
+          <p>Real-time 3D scene reconstruction and rendering. CUDA-accelerated with spherical harmonics for view-dependent appearance.</p>
+        </div>
+        <div class="feature-item">
+          <h4>COLMAP Integration</h4>
+          <p>Classical structure-from-motion pipeline. Feature matching, bundle adjustment, dense reconstruction.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Point Cloud Processing</h4>
+          <p>Filtering, downsampling, normal estimation, registration. Statistical and radius outlier removal.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Mesh Operations</h4>
+          <p>Decimation, smoothing, repair, simplification. Poisson surface reconstruction and Ball-Pivoting.</p>
+        </div>
+        <div class="feature-item">
+          <h4>ExabyteWorld</h4>
+          <p>Panorama-to-3D scene generation. Layer decomposition, depth estimation, novel view synthesis.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Point Clouds</span>
+          <span class="spec-value">PLY, PCD, XYZ, PTS, LAS</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Meshes</span>
+          <span class="spec-value">OBJ, PLY, STL, FBX, GLTF</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Rendering</span>
+          <span class="spec-value">Real-time (30+ fps)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Quality</span>
+          <span class="spec-value">5 levels (Preview to Ultra)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spatial/360° Media -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>Spatial/360° Media</h2>
+          <p class="modality-subtitle">Immersive content editing with equirectangular and cubemap support</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>Equirectangular Editing</h4>
+          <p>Crop, rotate (yaw/pitch/roll), horizon leveling. Seam correction for 360° content.</p>
+        </div>
+        <div class="feature-item">
+          <h4>360° Stabilization</h4>
+          <p>Gyroscope-based and optical flow-based stabilization. Smoothing filters for camera motion.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Nadir/Zenith Patching</h4>
+          <p>Remove tripod or fill sky regions. Automated patching with content-aware fill.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Coverage Analysis</h4>
+          <p>Detect missing or black regions. Stitching quality evaluation and projection validation.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Multiple Formats</h4>
+          <p>Equirectangular (2:1), cubemap (6 faces), dual-fisheye, side-by-side stereo.</p>
+        </div>
+        <div class="feature-item">
+          <h4>VR Export</h4>
+          <p>Export to VR-ready formats for Meta Quest, HTC Vive, and other VR headsets.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">Formats</span>
+          <span class="spec-value">Equirect, Cubemap, Fisheye</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Resolutions</span>
+          <span class="spec-value">Up to 8K 360°</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Stereo Support</span>
+          <span class="spec-value">Side-by-side, Top-bottom</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">VR Platforms</span>
+          <span class="spec-value">Quest, Vive, PSVR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI-Powered Workflows -->
+  <section class="modality-section">
+    <div class="container">
+      <div class="modality-header">
+        <div class="modality-icon-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="modality-info">
+          <h2>AI-Powered Workflows</h2>
+          <p class="modality-subtitle">Multi-provider AI agents with tool execution and automation</p>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4>Multi-Provider Support</h4>
+          <p>Exabyte LLM (local), Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google). Unified interface for all providers.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Tool Execution</h4>
+          <p>AI agents can execute tools with user permission. Project, media, pipeline, and analysis tools available.</p>
+        </div>
+        <div class="feature-item">
+          <h4>Permission Management</h4>
+          <p>WebSocket-based user consent. Granular permissions (read/write/execute) with expiry support.</p>
+        </div>
+        <div class="feature-item">
+          <h4>ExabyteImage 3.0</h4>
+          <p>Text-to-image generation up to 2048x2048. Negative prompts, style control, inpainting/outpainting.</p>
+        </div>
+        <div class="feature-item">
+          <h4>ExabyteVideo 1.0</h4>
+          <p>Text-to-video synthesis. Temporal consistency, motion control, multiple duration options (2s-10s).</p>
+        </div>
+        <div class="feature-item">
+          <h4>Session Management</h4>
+          <p>Conversation history, context preservation, API key storage in system keyring.</p>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">AI Providers</span>
+          <span class="spec-value">4 (Exabyte, Claude, GPT, Gemini)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Tool Categories</span>
+          <span class="spec-value">Project, Media, Pipeline, Analysis</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Image Gen</span>
+          <span class="spec-value">Up to 2048x2048</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Video Gen</span>
+          <span class="spec-value">Up to 1280x720</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Experience These Features?</h2>
+        <p>Explore the full capabilities of Exabyte Studio's multimodal processing platform.</p>
+        <div class="cta-buttons">
+          <a href="api.html" class="btn btn-primary btn-lg">View Documentation</a>
+          <a href="index.html#contact" class="btn btn-secondary btn-lg">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+          <p class="footer-tagline">Professional 3D Spatial Intelligence</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="features.html">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="api.html">API</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="api.html">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exabyte Spatial AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

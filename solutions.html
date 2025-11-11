@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions - Exabyte Studio</title>
+  <meta name="description" content="Discover how Exabyte Studio powers 3D spatial intelligence across industries: film, architecture, education, research, gaming, and more.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .solutions-hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    }
+
+    .solutions-hero h1 {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .solutions-hero p {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+
+    .industry-card {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .industry-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-gold-purple);
+      transform: scaleX(0);
+      transition: transform var(--transition-normal);
+    }
+
+    .industry-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(255, 179, 0, 0.15);
+      border-color: var(--color-gold-primary);
+    }
+
+    .industry-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .industry-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .industry-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .industry-description {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .industry-applications {
+      list-style: none;
+      padding: 0;
+    }
+
+    .industry-applications li {
+      padding: var(--spacing-xs) 0;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 0.95rem;
+    }
+
+    .industry-applications li:before {
+      content: "→";
+      color: var(--color-gold-primary);
+      font-weight: bold;
+    }
+
+    .workflow-section {
+      margin-top: var(--spacing-xl);
+    }
+
+    .workflow-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-lg);
+    }
+
+    .workflow {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border-left: 4px solid var(--color-purple-primary);
+    }
+
+    .workflow-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .workflow-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .workflow-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .workflow-description {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .workflow-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+
+    .workflow-step {
+      flex: 1;
+      min-width: 200px;
+      padding: var(--spacing-md);
+      background: var(--color-bg-primary);
+      border-radius: 8px;
+      border: 1px solid rgba(126, 87, 194, 0.2);
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 179, 0, 0.2);
+      color: var(--color-gold-primary);
+      text-align: center;
+      line-height: 28px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-xs);
+      font-size: 1rem;
+    }
+
+    .step-description {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .use-case-card {
+      padding: var(--spacing-lg);
+      background: linear-gradient(135deg, rgba(255, 179, 0, 0.05), rgba(126, 87, 194, 0.05));
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+      transition: all var(--transition-normal);
+    }
+
+    .use-case-card:hover {
+      border-color: var(--color-purple-primary);
+      transform: translateY(-4px);
+    }
+
+    .use-case-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .use-case-description {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-section {
+      padding: var(--spacing-xl) 0;
+      background: var(--color-bg-secondary);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+    }
+
+    .testimonial {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-primary);
+      border-radius: 12px;
+      border-left: 4px solid var(--color-gold-primary);
+    }
+
+    .testimonial-quote {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: var(--spacing-md);
+      font-size: 1.05rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .author-info h4 {
+      color: var(--color-text-primary);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .author-info p {
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .solutions-hero h1 {
+        font-size: 2rem;
+      }
+
+      .solutions-hero p {
+        font-size: 1rem;
+      }
+
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-steps {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="solutions.html" class="nav-link active">Solutions</a>
+        <a href="api.html" class="nav-link">API</a>
+        <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="solutions-hero">
+    <div class="container">
+      <h1>Industry <span class="gradient-text">Solutions</span></h1>
+      <p>
+        Exabyte Studio empowers professionals across industries to create immersive 3D spatial content,
+        process multimodal data, and unlock new creative possibilities with AI-powered workflows.
+      </p>
+    </div>
+  </section>
+
+  <!-- Industry Solutions -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-subtitle">
+          From film production to architectural visualization, Exabyte Studio delivers professional-grade
+          tools for every creative and technical workflow.
+        </p>
+      </div>
+
+      <div class="industry-grid">
+        <!-- Film & Media Production -->
+        <div class="industry-card">
+          <div class="industry-icon">🎬</div>
+          <h3 class="industry-title">Film & Media Production</h3>
+          <div class="industry-description">
+            Professional video editing, color grading, VFX, and spatial audio for immersive storytelling.
+            From indie films to corporate videos, create cinematic experiences with AI-powered tools.
+          </div>
+          <ul class="industry-applications">
+            <li>Multi-track timeline editing</li>
+            <li>Professional color grading</li>
+            <li>3D spatial audio mixing</li>
+            <li>AI-powered scene generation</li>
+            <li>360° video production</li>
+          </ul>
+        </div>
+
+        <!-- Architecture & Real Estate -->
+        <div class="industry-card">
+          <div class="industry-icon">🏗️</div>
+          <h3 class="industry-title">Architecture & Real Estate</h3>
+          <div class="industry-description">
+            Transform site photography into immersive 3D environments. Create virtual tours, architectural
+            visualizations, and photorealistic renderings for client presentations.
+          </div>
+          <ul class="industry-applications">
+            <li>Photogrammetric 3D reconstruction</li>
+            <li>Virtual property tours</li>
+            <li>Design visualization</li>
+            <li>Spatial measurements</li>
+            <li>VR walkthroughs</li>
+          </ul>
+        </div>
+
+        <!-- Education & Training -->
+        <div class="industry-card">
+          <div class="industry-icon">🎓</div>
+          <h3 class="industry-title">Education & Training</h3>
+          <div class="industry-description">
+            Create immersive educational content with 3D models, spatial audio, and interactive experiences.
+            Build training simulations and instructional materials that engage learners.
+          </div>
+          <ul class="industry-applications">
+            <li>Interactive 3D learning models</li>
+            <li>VR training simulations</li>
+            <li>Educational video production</li>
+            <li>Spatial audio lectures</li>
+            <li>Remote collaboration tools</li>
+          </ul>
+        </div>
+
+        <!-- Research & Development -->
+        <div class="industry-card">
+          <div class="industry-icon">🔬</div>
+          <h3 class="industry-title">Research & Development</h3>
+          <div class="industry-description">
+            Advanced data processing and visualization for scientific research. 3D reconstruction for
+            archaeology, biology, geology, and more. ML pipeline integration for custom workflows.
+          </div>
+          <ul class="industry-applications">
+            <li>Scientific data visualization</li>
+            <li>3D scanning and reconstruction</li>
+            <li>Custom ML pipeline integration</li>
+            <li>Multi-modal data analysis</li>
+            <li>Reproducible research workflows</li>
+          </ul>
+        </div>
+
+        <!-- Gaming & VR/AR -->
+        <div class="industry-card">
+          <div class="industry-icon">🎮</div>
+          <h3 class="industry-title">Gaming & VR/AR</h3>
+          <div class="industry-description">
+            Generate 3D assets, create immersive environments, and process spatial audio for games and
+            virtual reality experiences. AI-powered content generation accelerates development.
+          </div>
+          <ul class="industry-applications">
+            <li>3D asset generation</li>
+            <li>Environment reconstruction</li>
+            <li>Spatial audio design</li>
+            <li>VR/AR content creation</li>
+            <li>Real-time rendering</li>
+          </ul>
+        </div>
+
+        <!-- Marketing & Advertising -->
+        <div class="industry-card">
+          <div class="industry-icon">📢</div>
+          <h3 class="industry-title">Marketing & Advertising</h3>
+          <div class="industry-description">
+            Create engaging promotional content with AI-generated imagery, 3D product visualizations,
+            and immersive brand experiences. Stand out with cutting-edge spatial content.
+          </div>
+          <ul class="industry-applications">
+            <li>AI-generated product imagery</li>
+            <li>3D product visualization</li>
+            <li>360° product tours</li>
+            <li>Interactive brand experiences</li>
+            <li>Multi-channel content creation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflows -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Professional Workflows</h2>
+        <p class="section-subtitle">
+          End-to-end workflows designed for real-world production scenarios.
+        </p>
+      </div>
+
+      <div class="workflow-container">
+        <!-- 3D Reconstruction Workflow -->
+        <div class="workflow">
+          <div class="workflow-header">
+            <div class="workflow-number">1</div>
+            <h3 class="workflow-title">3D Reconstruction Workflow</h3>
+          </div>
+          <div class="workflow-description">
+            Transform multi-view photographs into detailed 3D models using VGGT, Gaussian Splatting, or COLMAP.
+            Perfect for architectural documentation, object digitization, and scene reconstruction.
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="step-number">1</div>
+              <div class="step-title">Image Capture</div>
+              <div class="step-description">
+                Capture multiple photos of the subject from different angles. Support for DSLR, drone, or smartphone cameras.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">2</div>
+              <div class="step-title">Feature Extraction</div>
+              <div class="step-description">
+                Automatic feature detection and matching across images. SIFT, ORB, or transformer-based features.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">3</div>
+              <div class="step-title">Reconstruction</div>
+              <div class="step-description">
+                Choose algorithm: VGGT for transformer-based, Gaussian Splatting for real-time, or COLMAP for classical SfM.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">4</div>
+              <div class="step-title">Refinement</div>
+              <div class="step-description">
+                Optimize geometry, fill holes, smooth surfaces, and enhance texture quality with built-in tools.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">5</div>
+              <div class="step-title">Export</div>
+              <div class="step-description">
+                Export to PLY, OBJ, glTF, or Gaussian Splat formats. VR-ready output for immersive viewing.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Production Workflow -->
+        <div class="workflow">
+          <div class="workflow-header">
+            <div class="workflow-number">2</div>
+            <h3 class="workflow-title">Video Production Workflow</h3>
+          </div>
+          <div class="workflow-description">
+            Professional multi-track video editing with real-time effects, color grading, and GPU-accelerated encoding.
+            Support for 4K/8K resolution and professional codecs like ProRes and H.265.
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="step-number">1</div>
+              <div class="step-title">Import Media</div>
+              <div class="step-description">
+                Import video, audio, and images. Support for all major formats including RAW, ProRes, and H.265.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">2</div>
+              <div class="step-title">Timeline Editing</div>
+              <div class="step-description">
+                Multi-track timeline with non-destructive editing. Cut, trim, transitions, and keyframe animations.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">3</div>
+              <div class="step-title">Effects & Grading</div>
+              <div class="step-description">
+                Apply real-time effects, professional color grading, and AI-powered enhancements.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">4</div>
+              <div class="step-title">Audio Mixing</div>
+              <div class="step-description">
+                Multi-channel audio mixing with spatial audio support. HRTF binaural processing for immersive sound.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">5</div>
+              <div class="step-title">Render</div>
+              <div class="step-description">
+                GPU-accelerated encoding to ProRes, H.265, or other formats. Hardware encoding support for faster exports.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spatial Audio Workflow -->
+        <div class="workflow">
+          <div class="workflow-header">
+            <div class="workflow-number">3</div>
+            <h3 class="workflow-title">Spatial Audio Workflow</h3>
+          </div>
+          <div class="workflow-description">
+            Create immersive 3D audio experiences with 3rd-order Ambisonics, HRTF processing, and multi-channel mixing.
+            Perfect for VR experiences, 360° videos, and spatial installations.
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="step-number">1</div>
+              <div class="step-title">Audio Recording</div>
+              <div class="step-description">
+                Record with spatial microphone arrays or import existing audio. Support for up to 20 channels.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">2</div>
+              <div class="step-title">Spatial Positioning</div>
+              <div class="step-description">
+                Position audio sources in 3D space. Visualize soundfield in real-time with spatial editor.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">3</div>
+              <div class="step-title">Ambisonics Encoding</div>
+              <div class="step-description">
+                Encode to 3rd-order Ambisonics format. Support for higher orders and custom speaker configurations.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">4</div>
+              <div class="step-title">HRTF Processing</div>
+              <div class="step-description">
+                Apply binaural processing for headphone playback. Realistic 3D audio perception with head tracking support.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">5</div>
+              <div class="step-title">Export</div>
+              <div class="step-description">
+                Export to various formats: binaural stereo, multi-channel, or Ambisonics. VR-ready audio for platforms.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI-Powered Generation Workflow -->
+        <div class="workflow">
+          <div class="workflow-header">
+            <div class="workflow-number">4</div>
+            <h3 class="workflow-title">AI-Powered Generation Workflow</h3>
+          </div>
+          <div class="workflow-description">
+            Leverage AI models like ExabyteImage, ExabyteVideo, and ExabyteWorld to generate high-quality content from
+            text prompts or transform panoramas into 3D environments.
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <div class="step-number">1</div>
+              <div class="step-title">Prompt Engineering</div>
+              <div class="step-description">
+                Craft detailed text prompts describing the desired output. Use style keywords and compositional guidance.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">2</div>
+              <div class="step-title">Model Selection</div>
+              <div class="step-description">
+                Choose model: ExabyteImage for images, ExabyteVideo for videos, or ExabyteWorld for 3D scenes.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">3</div>
+              <div class="step-title">Generation</div>
+              <div class="step-description">
+                AI generates content based on your prompt. Adjust parameters like resolution, duration, or style.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">4</div>
+              <div class="step-title">Refinement</div>
+              <div class="step-description">
+                Iteratively refine results with prompt adjustments or use generated content as starting point for editing.
+              </div>
+            </div>
+            <div class="workflow-step">
+              <div class="step-number">5</div>
+              <div class="step-title">Integration</div>
+              <div class="step-description">
+                Integrate AI-generated assets into your projects. Combine with manual edits for hybrid workflows.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Real-World Use Cases</h2>
+        <p class="section-subtitle">
+          See how professionals use Exabyte Studio to solve real challenges.
+        </p>
+      </div>
+
+      <div class="use-case-grid">
+        <div class="use-case-card">
+          <h3 class="use-case-title">Virtual Property Tours</h3>
+          <div class="use-case-description">
+            Real estate agencies create immersive 360° virtual tours from site photos, allowing clients
+            to explore properties remotely with spatial audio narration.
+          </div>
+        </div>
+
+        <div class="use-case-card">
+          <h3 class="use-case-title">Documentary Production</h3>
+          <div class="use-case-description">
+            Filmmakers capture on-location footage and edit with professional tools, adding AI-generated
+            B-roll and spatial audio soundscapes for immersive storytelling.
+          </div>
+        </div>
+
+        <div class="use-case-card">
+          <h3 class="use-case-title">Museum Digitization</h3>
+          <div class="use-case-description">
+            Museums create 3D digital archives of artifacts and exhibits using photogrammetry,
+            preserving cultural heritage and enabling virtual exhibitions.
+          </div>
+        </div>
+
+        <div class="use-case-card">
+          <h3 class="use-case-title">Product Visualization</h3>
+          <div class="use-case-description">
+            E-commerce brands generate photorealistic product renders with AI, create 360° product views,
+            and produce marketing videos without physical photography.
+          </div>
+        </div>
+
+        <div class="use-case-card">
+          <h3 class="use-case-title">VR Training Simulations</h3>
+          <div class="use-case-description">
+            Corporate trainers develop immersive VR simulations by reconstructing real environments
+            and adding interactive 3D elements and spatial audio guidance.
+          </div>
+        </div>
+
+        <div class="use-case-card">
+          <h3 class="use-case-title">Archaeological Documentation</h3>
+          <div class="use-case-description">
+            Researchers document excavation sites with 3D reconstruction, creating detailed digital
+            records for analysis and sharing findings with the academic community.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What Professionals Say</h2>
+        <p class="section-subtitle">
+          Hear from users transforming their workflows with Exabyte Studio.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="testimonial-quote">
+            "Exabyte Studio's 3D reconstruction capabilities are exceptional. We've digitized entire
+            archaeological sites with accuracy that rivals expensive professional systems, but with
+            a fraction of the complexity."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">DS</div>
+            <div class="author-info">
+              <h4>Dr. Sarah Chen</h4>
+              <p>Archaeological Researcher</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-quote">
+            "The spatial audio tools are game-changing for VR content. 3rd-order Ambisonics with
+            HRTF processing gives us professional-grade immersive audio that was previously only
+            available in dedicated audio suites."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div class="author-info">
+              <h4>Marcus Rodriguez</h4>
+              <p>VR Experience Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-quote">
+            "AI-powered generation has accelerated our concept development tenfold. We can quickly
+            iterate on visual ideas and generate placeholder assets that help clients visualize
+            the final product."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div class="author-info">
+              <h4>Alex Kim</h4>
+              <p>Creative Director, Marketing Agency</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Workflow?</h2>
+        <p>Join professionals across industries using Exabyte Studio for 3D spatial intelligence.</p>
+        <div class="cta-buttons">
+          <a href="api.html" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+          <p class="footer-tagline">Professional 3D Spatial Intelligence</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="features.html">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="api.html">API</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="api.html">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exabyte Spatial AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

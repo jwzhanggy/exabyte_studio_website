@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation - Exabyte Studio</title>
+  <meta name="description" content="Exabyte Studio API documentation - Coming Soon">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .api-hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    }
+
+    .api-hero h1 {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .api-hero p {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .api-coming-soon {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .coming-soon-icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: var(--spacing-lg);
+      border-radius: 50%;
+      background: var(--gradient-gold-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 179, 0, 0);
+      }
+    }
+
+    .coming-soon-title {
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+      background: var(--gradient-gold-purple);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .coming-soon-description {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-lg);
+      line-height: 1.8;
+    }
+
+    .feature-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-preview-card {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-secondary);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 179, 0, 0.1);
+      transition: all var(--transition-normal);
+    }
+
+    .feature-preview-card:hover {
+      border-color: var(--color-gold-primary);
+      transform: translateY(-4px);
+    }
+
+    .feature-preview-card h4 {
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-sm);
+      font-size: 1.2rem;
+    }
+
+    .feature-preview-card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .notify-section {
+      padding: var(--spacing-xl) var(--spacing-md);
+      background: var(--color-bg-secondary);
+      text-align: center;
+    }
+
+    .notify-form {
+      max-width: 500px;
+      margin: var(--spacing-lg) auto 0;
+      display: flex;
+      gap: var(--spacing-sm);
+    }
+
+    .notify-input {
+      flex: 1;
+      padding: 14px 20px;
+      background: var(--color-bg-primary);
+      border: 1px solid rgba(255, 179, 0, 0.2);
+      border-radius: 8px;
+      color: var(--color-text-primary);
+      font-size: 1rem;
+      transition: border-color var(--transition-normal);
+    }
+
+    .notify-input:focus {
+      outline: none;
+      border-color: var(--color-gold-primary);
+    }
+
+    .notify-button {
+      padding: 14px 32px;
+      background: var(--gradient-gold-purple);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform var(--transition-normal);
+    }
+
+    .notify-button:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .api-hero h1 {
+        font-size: 2rem;
+      }
+
+      .coming-soon-title {
+        font-size: 2rem;
+      }
+
+      .notify-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="api.html" class="nav-link active">API</a>
+        <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="api-hero">
+    <div class="container">
+      <h1>Developer <span class="gradient-text">API</span></h1>
+      <p>
+        Powerful REST and WebSocket APIs for seamless integration with Exabyte Studio.
+      </p>
+    </div>
+  </section>
+
+  <!-- Coming Soon Section -->
+  <section class="api-coming-soon">
+    <div class="coming-soon-icon">🚀</div>
+    <h2 class="coming-soon-title">API Documentation Coming Soon</h2>
+    <p class="coming-soon-description">
+      We're currently finalizing our comprehensive API documentation. Our REST and WebSocket APIs
+      will enable you to integrate Exabyte Studio's powerful 3D spatial intelligence capabilities
+      into your own applications and workflows.
+    </p>
+
+    <div class="feature-preview-grid">
+      <div class="feature-preview-card">
+        <h4>RESTful Architecture</h4>
+        <p>Clean, predictable REST endpoints for all processing operations. JSON request/response format with comprehensive error handling.</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <h4>WebSocket Support</h4>
+        <p>Real-time event streaming for progress updates, status changes, and notifications. Bidirectional communication for interactive workflows.</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <h4>OpenAPI Documentation</h4>
+        <p>Complete OpenAPI 3.0 specification with interactive Swagger UI. Automatically generated client libraries for multiple languages.</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <h4>Authentication & Security</h4>
+        <p>Multiple authentication methods including API keys, JWT tokens, and OAuth 2.0. Role-based access control with fine-grained permissions.</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <h4>Async Operations</h4>
+        <p>Long-running operations return immediately with job IDs. Poll for status or receive WebSocket notifications upon completion.</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <h4>Multi-Language SDKs</h4>
+        <p>Official SDKs for Python, JavaScript, and Go. Community-maintained libraries for additional languages and frameworks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notify Section -->
+  <section class="notify-section">
+    <div class="container">
+      <h2 class="section-title">Get Notified When API Launches</h2>
+      <p class="section-subtitle" style="max-width: 600px; margin: var(--spacing-sm) auto;">
+        Be the first to know when our API documentation goes live. We'll send you early access
+        information and integration guides.
+      </p>
+      <form class="notify-form" onsubmit="return false;">
+        <input
+          type="email"
+          class="notify-input"
+          placeholder="Enter your email address"
+          required
+        />
+        <button type="submit" class="notify-button">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Interested in Early Access?</h2>
+        <p>Contact us to discuss early API access and integration opportunities.</p>
+        <div class="cta-buttons">
+          <a href="index.html#contact" class="btn btn-primary btn-lg">Contact Us</a>
+          <a href="features.html" class="btn btn-secondary btn-lg">Explore Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+          <p class="footer-tagline">Professional 3D Spatial Intelligence</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="features.html">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="api.html">API</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="api.html">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="index.html#contact">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exabyte Spatial AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

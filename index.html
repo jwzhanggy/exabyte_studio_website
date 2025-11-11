@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exabyte Studio - Professional 3D Spatial Intelligence Platform</title>
+  <meta name="description" content="Professional multimodal processing platform for 3D spatial intelligence, AI-powered workflows, and immersive content creation.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+        </a>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="technology.html" class="nav-link">Technology</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="api.html" class="nav-link">API</a>
+        <a href="#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Particle Animation -->
+  <section class="hero" id="hero">
+    <canvas id="scene"></canvas>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- Content Section (appears after particle zoom) -->
+  <section class="hero-content-section" id="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Professional 3D Spatial<br>
+          <span class="gradient-text">Intelligence Platform</span>
+        </h1>
+        <p class="hero-subtitle">
+          AI-powered multimodal processing for immersive content creation.<br>
+          From capture to reconstruction, editing to rendering.
+        </p>
+        <div class="hero-buttons">
+          <a href="#features" class="btn btn-primary">Explore Features</a>
+          <a href="api.html" class="btn btn-secondary">View Documentation</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">272K+</span>
+            <span class="stat-label">Lines of Code</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Processing Modalities</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">AI Test Coverage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What is Exabyte Studio?</h2>
+        <p class="section-subtitle">
+          A comprehensive software platform combining professional editing tools,
+          AI-powered workflows, and state-of-the-art 3D reconstruction algorithms.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>3D Reconstruction</h3>
+          <p>VGGT, Gaussian Splatting, and COLMAP algorithms for dense 3D reconstruction from multi-view images.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>Professional Editing</h3>
+          <p>Multi-track timeline, real-time effects, and non-destructive editing for all media types.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>AI Generation</h3>
+          <p>ExabyteImage, ExabyteVideo, and ExabyteWorld for text-to-image, text-to-video, and panorama-to-3D.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <h3>Spatial Audio</h3>
+          <p>3rd-order Ambisonics, HRTF processing, and multi-channel recording for immersive audio experiences.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Real-Time Processing</h3>
+          <p>Zero-copy shared memory IPC, GPU acceleration, and async workflows for instant feedback.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
+            </svg>
+          </div>
+          <h3>Open API</h3>
+          <p>REST/WebSocket APIs with OpenAPI documentation for seamless integration and automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section class="section section-dark" id="capabilities">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Multimodal Processing Capabilities</h2>
+        <p class="section-subtitle">
+          Complete workflows for six data modalities in a single unified platform.
+        </p>
+      </div>
+
+      <div class="capabilities-list">
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">01</div>
+            <div class="capability-info">
+              <h3>Image Processing</h3>
+              <p>Professional editing, filters, enhancements, AI generation, and object detection. Support for RAW, TIFF, PNG, JPEG, and more.</p>
+              <div class="capability-tags">
+                <span class="tag">Gaussian Blur</span>
+                <span class="tag">Color Grading</span>
+                <span class="tag">AI Generation</span>
+                <span class="tag">Non-destructive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">02</div>
+            <div class="capability-info">
+              <h3>Video Production</h3>
+              <p>Multi-track timeline, real-time effects, professional codecs (ProRes, H.265), and GPU-accelerated encoding up to 8K resolution.</p>
+              <div class="capability-tags">
+                <span class="tag">Timeline Editor</span>
+                <span class="tag">4K/8K Support</span>
+                <span class="tag">Color Grading</span>
+                <span class="tag">AI Video Gen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">03</div>
+            <div class="capability-info">
+              <h3>Audio Processing</h3>
+              <p>Spatial audio with 3rd-order Ambisonics, HRTF binaural processing, professional effects, and multi-channel mixing up to 20 channels.</p>
+              <div class="capability-tags">
+                <span class="tag">Ambisonics</span>
+                <span class="tag">HRTF</span>
+                <span class="tag">20 Channels</span>
+                <span class="tag">Real-time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">04</div>
+            <div class="capability-info">
+              <h3>3D Reconstruction</h3>
+              <p>VGGT transformer-based reconstruction, Gaussian Splatting for real-time rendering, and COLMAP for classical structure-from-motion.</p>
+              <div class="capability-tags">
+                <span class="tag">VGGT</span>
+                <span class="tag">Gaussian Splatting</span>
+                <span class="tag">Point Clouds</span>
+                <span class="tag">Mesh Gen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">05</div>
+            <div class="capability-info">
+              <h3>Spatial/360° Media</h3>
+              <p>Equirectangular editing, 360° stabilization, horizon leveling, and support for cubemap and dual-fisheye formats.</p>
+              <div class="capability-tags">
+                <span class="tag">Equirectangular</span>
+                <span class="tag">Cubemap</span>
+                <span class="tag">Stabilization</span>
+                <span class="tag">VR Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-item">
+          <div class="capability-content">
+            <div class="capability-number">06</div>
+            <div class="capability-info">
+              <h3>AI-Powered Workflows</h3>
+              <p>Multi-provider AI agents (Claude, ChatGPT, Gemini), tool execution with permissions, and automated content generation.</p>
+              <div class="capability-tags">
+                <span class="tag">Multi-Provider</span>
+                <span class="tag">Tool Execution</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Chat Interface</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="architecture-content">
+        <div class="architecture-text">
+          <h2 class="section-title">Six-Layer Clean Architecture</h2>
+          <p class="architecture-description">
+            Exabyte Studio implements a sophisticated six-layer architecture ensuring reliability,
+            scalability, and maintainability. Each layer communicates only with adjacent layers
+            through well-defined interfaces.
+          </p>
+          <div class="architecture-features">
+            <div class="arch-feature">
+              <div class="arch-icon">✓</div>
+              <div>
+                <strong>Zero-Copy IPC</strong>
+                <p>Shared memory for instant data access without serialization</p>
+              </div>
+            </div>
+            <div class="arch-feature">
+              <div class="arch-icon">✓</div>
+              <div>
+                <strong>Async-First Design</strong>
+                <p>Non-blocking operations throughout the entire stack</p>
+              </div>
+            </div>
+            <div class="arch-feature">
+              <div class="arch-icon">✓</div>
+              <div>
+                <strong>Type-Safe Operations</strong>
+                <p>Enum-based operation definitions for compile-time validation</p>
+              </div>
+            </div>
+          </div>
+          <a href="technology.html" class="btn btn-primary">Explore Technology</a>
+        </div>
+        <div class="architecture-diagram">
+          <div class="layer layer-6">
+            <span class="layer-num">Layer 6</span>
+            <span class="layer-name">GUI (Qt6/PySide6)</span>
+          </div>
+          <div class="layer-arrow">↓</div>
+          <div class="layer layer-5">
+            <span class="layer-num">Layer 5</span>
+            <span class="layer-name">Application (API Gateway)</span>
+          </div>
+          <div class="layer-arrow">↓</div>
+          <div class="layer layer-4">
+            <span class="layer-num">Layer 4</span>
+            <span class="layer-name">Orchestration (Workflows)</span>
+          </div>
+          <div class="layer-arrow">↓</div>
+          <div class="layer layer-3">
+            <span class="layer-num">Layer 3</span>
+            <span class="layer-name">Operations (Bridge)</span>
+          </div>
+          <div class="layer-arrow">↓</div>
+          <div class="layer layer-bottom">
+            <span class="layer-name">Five Independent Packages</span>
+            <div class="layer-sub">Hardware • Systems • Algorithms • Project • Plugins</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Workflow?</h2>
+        <p>Experience professional 3D spatial intelligence with AI-powered multimodal processing.</p>
+        <div class="cta-buttons">
+          <a href="api.html" class="btn btn-primary btn-lg">View Documentation</a>
+          <a href="#contact" class="btn btn-secondary btn-lg">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Have questions? Want to learn more? Contact our team.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:jiawei@ifmlab.org">jiawei@ifmlab.org</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Documentation</h3>
+          <p><a href="api.html">API Documentation →</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/exabyte-spatial-ai" target="_blank">View Repository →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">EXABYTE</span>
+          <span class="logo-sub">STUDIO</span>
+          <p class="footer-tagline">Professional 3D Spatial Intelligence</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="features.html">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="api.html">API</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="api.html">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="#contact">Contact</a>
+            <a href="#">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Exabyte Spatial AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Particle Animation Script -->
+  <script src="particle-hero.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
